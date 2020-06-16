@@ -3,3 +3,5 @@
 tmp
 marginalia_test
 Gemfile.lock
+*.iml
+.idea
