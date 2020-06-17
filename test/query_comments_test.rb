@@ -121,7 +121,7 @@ class MarginaliaTest < MiniTest::Test
       @queries << args.last[:sql]
     end
     @env = Rack::MockRequest.env_for('/')
-      #ActiveJob::Base.queue_adapter = :inline
+    ActiveJob::Base.queue_adapter = :inline
   end
 
   def test_double_annotate
