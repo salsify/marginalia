@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gemspec
 
-version = ENV["RAILS_VERSION"] || "4.2.0"
+version = ENV["RAILS_VERSION"] || "6.0.0"
 
 if version < "4.2.5"
   gem 'mysql2', '~> 0.3.13'
