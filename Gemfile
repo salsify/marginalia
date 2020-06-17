@@ -12,7 +12,12 @@ else
   gem 'mysql2'
 end
 gem 'pg', '~> 0.15'
-gem 'sqlite3', '~> 1.3.6'
+
+if version < "6.0.0"
+  gem 'sqlite3', '~> 1.3.6'
+else
+  gem 'sqlite3', '~> 1.4.2'
+end
 
 if version == "master"
   gem "rails", github: "rails/rails"
