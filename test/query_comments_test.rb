@@ -121,6 +121,7 @@ class MarginaliaTest < MiniTest::Test
       @queries << args.last[:sql]
     end
     @env = Rack::MockRequest.env_for('/')
+    ActiveJob::Base.queue_adapter = :inline
   end
 
   def test_double_annotate
@@ -299,7 +300,7 @@ class MarginaliaTest < MiniTest::Test
 
     # Test harness does not run Sidekiq middlewares by default so include testing middleware.
     Sidekiq::Testing.server_middleware do |chain|
-     chain.add Marginalia::SidekiqInstrumentation::Middleware
+      chain.add Marginalia::SidekiqInstrumentation::Middleware
     end
 
     Sidekiq::Testing.fake!

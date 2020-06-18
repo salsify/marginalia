@@ -6,9 +6,9 @@ services:
   - postgresql
 
 rvm:
-  - 2.2
-  - 2.3
-  - 2.4
+  - 2.5
+  - 2.6
+  - 2.7
 
 services:
   - mysql
@@ -17,8 +17,28 @@ services:
 script: "bundle exec rake db:reset test:all"
 
 gemfile:
-  - gemfiles/4.2.gemfile
-  - gemfiles/4.2.api.gemfile
-  - gemfiles/5.0.gemfile
-  - gemfiles/5.1.gemfile
   - gemfiles/5.2.gemfile
+  - gemfiles/6.0.gemfile
+
+matrix:
+  include:
+    - rvm: 2.3
+      gemfile: gemfiles/4.2.gemfile
+    - rvm: 2.3
+      gemfile: gemfiles/4.2.api.gemfile
+    - rvm: 2.3
+      gemfile: gemfiles/5.0.gemfile
+    - rvm: 2.3
+      gemfile: gemfiles/5.1.gemfile
+    - rvm: 2.3
+      gemfile: gemfiles/5.2.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/4.2.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/4.2.api.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/5.0.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/5.1.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/5.2.gemfile
