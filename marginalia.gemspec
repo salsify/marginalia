@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test}/*`.split("\n")
-  gem.name          = "marginalia"
+  gem.name          = "salsify-marginalia"
   gem.require_paths = ["lib"]
   gem.version       = "1.8.1"
   gem.license       = "MIT"
